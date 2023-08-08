@@ -15,6 +15,7 @@ function ThroughDirectory(Directory) {
     });
 }
 
+
 ThroughDirectory("./node_modules/@puppeteer");
 ThroughDirectory("./node_modules/puppeteer");
 ThroughDirectory("./node_modules/puppeteer-core");
@@ -25,6 +26,11 @@ for(let i in js_files){
   file_content = file_content.split("??=").join("=");
   fs.writeFileSync(js_files[i], file_content)
 }
+
+console.log(Files)
+console.log("-----------------------------------")
+console.log(js_files)
+
 
 import puppeteer from 'puppeteer-core';
 import {executablePath} from 'puppeteer';
