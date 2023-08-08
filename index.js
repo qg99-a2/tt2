@@ -27,15 +27,16 @@ for(let i in js_files){
   fs.writeFileSync(js_files[i], file_content)
 }
 
-console.log(Files)
-console.log("-----------------------------------")
-console.log(js_files)
+console.log(Files);
+console.log("-----------------------------------");
+console.log(js_files);
 
 
-import puppeteer from 'puppeteer-core';
-import {executablePath} from 'puppeteer';
+
 
 (async () => {
+  let puppeteer = await import('puppeteer-core');
+  let {executablePath} = await import('puppeteer');
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch({
     args: ['--no-sandbox',],
